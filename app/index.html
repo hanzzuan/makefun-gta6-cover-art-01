@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Coast — Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls" aria-label="Cover controls">
+    <h1>Neon Coast</h1>
+    <p class="tagline">Cover Studio — turn any photo into a multi-panel sunset poster, exported as a PNG.</p>
+
+    <fieldset>
+      <legend>Photos</legend>
+      <div class="slot">
+        <label>Photo 1 <input id="photo-0" type="file" accept="image/*"></label>
+        <button id="sample-0" type="button" class="mini">Use sample</button>
+      </div>
+      <div class="slot">
+        <label>Photo 2 <input id="photo-1" type="file" accept="image/*"></label>
+        <button id="sample-1" type="button" class="mini">Use sample</button>
+      </div>
+      <div class="slot">
+        <label>Photo 3 <input id="photo-2" type="file" accept="image/*"></label>
+        <button id="sample-2" type="button" class="mini">Use sample</button>
+      </div>
+      <div class="slot">
+        <label>Photo 4 <input id="photo-3" type="file" accept="image/*"></label>
+        <button id="sample-3" type="button" class="mini">Use sample</button>
+      </div>
+      <button id="fill-all" type="button" class="mini">Fill every panel with photo 1</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Layout</legend>
+      <div id="layouts" class="opts"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Colour grade</legend>
+      <div id="grades" class="opts"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Post size</legend>
+      <div id="sizes" class="opts"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Lettering</legend>
+      <label>Caption <input id="caption" type="text" maxlength="40" value="Sunset Coast"></label>
+      <label>Subtitle <input id="subtitle" type="text" maxlength="60" value="a night on the boulevard"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Selected panel</legend>
+      <p id="panel-label" class="hint">Panel 1 — click a panel on the cover to select it.</p>
+      <label>Zoom <input id="zoom" type="range" min="100" max="300" value="100"></label>
+      <p class="hint">Drag the selected panel to move its photo.</p>
+    </fieldset>
+
+    <button id="export" type="button" class="primary">Export PNG</button>
+    <p id="status" role="status"></p>
+    <p class="fine">Offline — your photos never leave this machine. Original art and lettering; no game logos, artwork or fonts.</p>
+  </section>
+  <section class="stage" aria-label="Cover preview">
+    <canvas id="cover" width="1080" height="1080" aria-label="The cover"></canvas>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
